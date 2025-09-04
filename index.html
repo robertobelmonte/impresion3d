@@ -3,10 +3,148 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Impresiones 3D — Quart de Poblet</title>
+  <title>Impresiones 3D — Quart de Poblet (Valencia)</title>
+  <meta name="description" content="Servicio de impresión 3D bajo pedido. Sube tu STL o envía un enlace y te doy precio sin compromiso." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+  </style>
 </head>
-<body>
-  <h1>¡Funciona! GitHub Pages está online.</h1>
-  <p>Luego cambiamos a la plantilla completa con formulario.</p>
+<body class="bg-white text-slate-800">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 backdrop-blur bg-white/80 border-b">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#" class="text-xl font-extrabold">Impresiones <span class="text-indigo-600">3D</span></a>
+      <nav class="hidden md:flex gap-6 text-sm">
+        <a href="#servicios" class="hover:text-indigo-600">Servicios</a>
+        <a href="#precios" class="hover:text-indigo-600">Precios</a>
+        <a href="#galeria" class="hover:text-indigo-600">Galería</a>
+        <a href="#pedido" class="hover:text-indigo-600">Pide tu impresión</a>
+      </nav>
+      <a href="#pedido" class="md:inline-block hidden px-4 py-2 rounded-xl bg-indigo-600 text-white text-sm font-semibold shadow">Pedir presupuesto</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="inicio" class="relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">Impresión 3D a medida, rápida y cercana.</h1>
+        <p class="mt-4 text-lg text-slate-600">Estoy en Quart de Poblet (Valencia). Envíame tu archivo <strong>.STL</strong> o un enlace y te confirmo precio y plazo.</p>
+        <div class="mt-8 flex gap-3">
+          <a href="#pedido" class="px-5 py-3 rounded-xl bg-indigo-600 text-white font-semibold shadow">Pedir presupuesto</a>
+          <a href="#precios" class="px-5 py-3 rounded-xl border border-slate-300 font-semibold">Ver precios</a>
+        </div>
+      </div>
+      <div class="bg-slate-100 rounded-2xl p-6 shadow">
+        <img src="https://images.unsplash.com/photo-1545445497-9e5b28b9cf96?q=80&w=1200&auto=format&fit=crop" alt="Impresora 3D" class="rounded-xl w-full h-auto" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios" class="border-t">
+    <div class="max-w-6xl mx-auto px-4 py-16">
+      <h2 class="text-3xl font-extrabold">Qué puedo imprimir</h2>
+      <p class="mt-2 text-slate-600">Piezas funcionales, piezas de repuesto, soportes, miniaturas, prototipos…</p>
+      <div class="mt-10 grid md:grid-cols-3 gap-6">
+        <article class="p-6 rounded-2xl border shadow-sm">
+          <h3 class="font-bold text-lg">Materiales</h3>
+          <p class="mt-2 text-slate-600">PLA (rápido y económico), PETG (resistente), TPU (flexible). Más bajo pedido.</p>
+        </article>
+        <article class="p-6 rounded-2xl border shadow-sm">
+          <h3 class="font-bold text-lg">Colores</h3>
+          <p class="mt-2 text-slate-600">Negro, blanco, gris, rojo, azul… Indica si necesitas un color especial.</p>
+        </article>
+        <article class="p-6 rounded-2xl border shadow-sm">
+          <h3 class="font-bold text-lg">Acabados</h3>
+          <p class="mt-2 text-slate-600">Boquilla 0.4 mm por defecto. Altura de capa 0.2 mm (calidad), 0.28 (rápido), 0.12 (fino).</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Precios -->
+  <section id="precios" class="bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4 py-16">
+      <h2 class="text-3xl font-extrabold">Precios orientativos</h2>
+      <p class="mt-2 text-slate-600">El precio final depende de gramos de material, tiempo de impresión y ajustes.</p>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-white border shadow">
+          <h3 class="font-bold text-lg">Básico</h3>
+          <p class="text-slate-600">Piezas pequeñas &lt; 4 h</p>
+          <p class="mt-3 text-3xl font-extrabold">€10–20</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white border shadow">
+          <h3 class="font-bold text-lg">Estándar</h3>
+          <p class="text-slate-600">4–12 h o piezas medianas</p>
+          <p class="mt-3 text-3xl font-extrabold">€20–45</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white border shadow">
+          <h3 class="font-bold text-lg">Avanzado</h3>
+          <p class="text-slate-600">&gt;12 h, materiales especiales</p>
+          <p class="mt-3 text-3xl font-extrabold">Desde €45</p>
+        </div>
+      </div>
+      <p class="mt-4 text-sm text-slate-500">Descuento para varios archivos. Recogida local gratuita en Quart de Poblet.</p>
+    </div>
+  </section>
+
+  <!-- Galería -->
+  <section id="galeria" class="border-t">
+    <div class="max-w-6xl mx-auto px-4 py-16">
+      <h2 class="text-3xl font-extrabold">Galería</h2>
+      <p class="mt-2 text-slate-600">Ejemplos de trabajos (sustituye por tus fotos):</p>
+      <div class="mt-8 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <img class="rounded-xl border" src="https://images.unsplash.com/photo-1563284319-0676033b211a?q=80&w=1200&auto=format&fit=crop" alt="pieza 1" />
+        <img class="rounded-xl border" src="https://images.unsplash.com/photo-1619454016518-d2d642d0e42e?q=80&w=1200&auto=format&fit=crop" alt="pieza 2" />
+        <img class="rounded-xl border" src="https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?q=80&w=1200&auto=format&fit=crop" alt="pieza 3" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulario -->
+  <section id="pedido" class="bg-slate-50 border-t">
+    <div class="max-w-2xl mx-auto px-4 py-16">
+      <h2 class="text-3xl font-extrabold">Pide tu impresión</h2>
+      <p class="mt-2 text-slate-600">Sube tu <strong>STL</strong> (máx. 25 MB por archivo)* o pega un enlace (Drive, WeTransfer). Te responderé con precio y plazo.</p>
+
+      <form action="https://formspree.io/f/TU-ENDPOINT" method="POST" enctype="multipart/form-data" class="mt-6 grid gap-4">
+        <label class="grid gap-1">
+          <span class="text-sm font-semibold">Nombre</span>
+          <input name="nombre" required class="px-3 py-2 rounded-xl border" placeholder="Tu nombre" />
+        </label>
+        <label class="grid gap-1">
+          <span class="text-sm font-semibold">Email</span>
+          <input type="email" name="email" required class="px-3 py-2 rounded-xl border" placeholder="tucorreo@email.com" />
+        </label>
+        <label class="grid gap-1">
+          <span class="text-sm font-semibold">Notas</span>
+          <textarea name="notas" rows="5" class="px-3 py-2 rounded-xl border" placeholder="Detalles de la impresión…"></textarea>
+        </label>
+        <button class="mt-2 px-5 py-3 rounded-xl bg-indigo-600 text-white font-semibold shadow w-fit">Enviar</button>
+        <p class="text-xs text-slate-500">* Para archivos grandes, mejor usa enlace (Drive/WeTransfer).</p>
+      </form>
+
+      <div class="mt-6 text-sm text-slate-600">
+        <p>También por WhatsApp: <a class="text-indigo-600 underline" href="https://wa.me/34XXXXXXXXX" target="_blank" rel="noreferrer">wa.me/34XXXXXXXXX</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t">
+    <div class="max-w-6xl mx-auto px-4 py-10 text-sm text-slate-500 flex flex-col md:flex-row items-center justify-between gap-3">
+      <p>© <span id="year"></span> Impresiones 3D — Quart de Poblet (Valencia)</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
