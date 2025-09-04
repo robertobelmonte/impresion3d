@@ -12,7 +12,6 @@
   <style>
     html { scroll-behavior: smooth; }
     body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
-    img { max-width: 100%; height: auto; }
   </style>
 </head>
 <body class="bg-white text-slate-800">
@@ -43,8 +42,7 @@
         </div>
       </div>
       <div class="bg-slate-100 rounded-2xl p-6 shadow">
-        <!-- ✅ Ruta corregida a la imagen -->
-        <img src="images/bambulab-futurista.png" alt="Impresora Bambulab futurista imprimiendo" loading="eager" width="1200" height="800" class="rounded-xl w-full h-auto" />
+        <img src="images/bambulab-futurista.png" alt="Impresora Bambulab futurista imprimiendo" class="rounded-xl w-full h-auto" />
       </div>
     </div>
   </section>
@@ -57,7 +55,7 @@
       <div class="mt-10 grid md:grid-cols-3 gap-6">
         <article class="p-6 rounded-2xl border shadow-sm">
           <h3 class="font-bold text-lg">Materiales</h3>
-          <p class="mt-2 text-slate-600">PLA (rápido y económico), PETG (resistente), TPU (flexible). Más bajo pedido.</p>
+          <p class="mt-2 text-slate-600">PLA, PETG, TPU… y más bajo pedido.</p>
         </article>
         <article class="p-6 rounded-2xl border shadow-sm">
           <h3 class="font-bold text-lg">Colores</h3>
@@ -75,7 +73,6 @@
   <section id="precios" class="bg-slate-50">
     <div class="max-w-6xl mx-auto px-4 py-16">
       <h2 class="text-3xl font-extrabold">Precios orientativos</h2>
-      <p class="mt-2 text-slate-600">El precio final depende de gramos de material, tiempo de impresión y ajustes.</p>
       <div class="mt-8 grid md:grid-cols-3 gap-6">
         <div class="p-6 rounded-2xl bg-white border shadow">
           <h3 class="font-bold text-lg">Básico</h3>
@@ -93,7 +90,6 @@
           <p class="mt-3 text-3xl font-extrabold">Desde €45</p>
         </div>
       </div>
-      <p class="mt-4 text-sm text-slate-500">Descuento para varios archivos. Recogida local gratuita en Quart de Poblet.</p>
     </div>
   </section>
 
@@ -101,14 +97,10 @@
   <section id="galeria" class="border-t">
     <div class="max-w-6xl mx-auto px-4 py-16">
       <h2 class="text-3xl font-extrabold">Galería</h2>
-      <p class="mt-2 text-slate-600">Ejemplos de trabajos impresos con mi Bambu Lab:</p>
       <div class="mt-8 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-        <!-- Foto 1 -->
-        <img class="rounded-xl border" src="images/impresion-multicolor1.png" alt="Figura multicolor 3D impresa en Bambu Lab" />
-        <!-- Foto 2 -->
-        <img class="rounded-xl border" src="images/impresion-multicolor2.png" alt="Figura geométrica multicolor 3D impresa en Bambu Lab" />
-        <!-- Foto 3 -->
-        <img class="rounded-xl border" src="images/impresion-animal.png" alt="Figura animal en un solo color impresa en Bambu Lab" />
+        <img class="rounded-xl border" src="images/impresion-multicolor1.png" alt="Figura multicolor 3D" />
+        <img class="rounded-xl border" src="images/impresion-multicolor2.png" alt="Figura geométrica multicolor 3D" />
+        <img class="rounded-xl border" src="images/impresion-animal.png" alt="Figura animal unicolor 3D" />
       </div>
     </div>
   </section>
@@ -117,31 +109,35 @@
   <section id="pedido" class="bg-slate-50 border-t">
     <div class="max-w-2xl mx-auto px-4 py-16">
       <h2 class="text-3xl font-extrabold">Pide tu impresión</h2>
-      <p class="mt-2 text-slate-600">Sube tu <strong>STL</strong> (máx. 25 MB por archivo)* o pega un enlace (Drive, WeTransfer). Te responderé con precio y plazo.</p>
+      <p class="mt-2 text-slate-600">Completa el formulario y recibirás tu presupuesto en tu email.</p>
 
-      <form action="https://formspree.io/f/TU-ENDPOINT" method="POST" enctype="multipart/form-data" class="mt-6 grid gap-4">
+      <form id="pedido-form" class="mt-6 grid gap-4">
         <label class="grid gap-1">
           <span class="text-sm font-semibold">Nombre</span>
-          <input name="nombre" required class="px-3 py-2 rounded-xl border" placeholder="Tu nombre" />
+          <input name="from_name" required class="px-3 py-2 rounded-xl border" placeholder="Tu nombre" />
         </label>
         <label class="grid gap-1">
           <span class="text-sm font-semibold">Email</span>
-          <input type="email" name="email" required class="px-3 py-2 rounded-xl border" placeholder="tucorreo@email.com" />
+          <input type="email" name="reply_to" required class="px-3 py-2 rounded-xl border" placeholder="tucorreo@email.com" />
         </label>
         <label class="grid gap-1">
           <span class="text-sm font-semibold">Notas</span>
-          <textarea name="notas" rows="5" class="px-3 py-2 rounded-xl border" placeholder="Detalles de la impresión…"></textarea>
+          <textarea name="message" rows="5" class="px-3 py-2 rounded-xl border" placeholder="Detalles de la impresión…"></textarea>
         </label>
-        <button class="mt-2 px-5 py-3 rounded-xl bg-indigo-600 text-white font-semibold shadow w-fit">Enviar</button>
-        <p class="text-xs text-slate-500">* Para archivos grandes, mejor usa enlace (Drive/WeTransfer).</p>
+        <label class="grid gap-1">
+          <span class="text-sm font-semibold">Enlace a tus STL</span>
+          <input name="stl_link" class="px-3 py-2 rounded-xl border" placeholder="https://..." />
+        </label>
+        <button type="submit" class="mt-2 px-5 py-3 rounded-xl bg-indigo-600 text-white font-semibold shadow w-fit">
+          Enviar
+        </button>
+        <p id="form-ok" class="hidden text-green-600 text-sm">¡Gracias! Te responderé pronto.</p>
+        <p id="form-err" class="hidden text-red-600 text-sm">Ups, error al enviar. Intenta de nuevo.</p>
       </form>
-
-      <div class="mt-6 text-sm text-slate-600">
-        <p>También por WhatsApp: <a class="text-indigo-600 underline" href="https://wa.me/34XXXXXXXXX" target="_blank" rel="noreferrer">wa.me/34XXXXXXXXX</a></p>
-      </div>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="border-t">
     <div class="max-w-6xl mx-auto px-4 py-10 text-sm text-slate-500 flex flex-col md:flex-row items-center justify-between gap-3">
       <p>© <span id="year"></span> Impresiones 3D — Quart de Poblet (Valencia)</p>
@@ -150,6 +146,39 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    emailjs.init("x2CiAIfhTqJXb04"); // ⚠️ Sustituye por tu Public Key real
+
+    const form = document.getElementById("pedido-form");
+    const ok = document.getElementById("form-ok");
+    const err = document.getElementById("form-err");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      ok.classList.add("hidden");
+      err.classList.add("hidden");
+
+      try {
+        const result = await emailjs.sendForm(
+          "service_75j7qhd",   // ✅ Service ID
+          "template_bp8oamb", // ✅ Template ID
+          form
+        );
+
+        if (result.status === 200) {
+          form.reset();
+          ok.classList.remove("hidden");
+        } else {
+          err.classList.remove("hidden");
+        }
+      } catch (e2) {
+        err.classList.remove("hidden");
+      }
+    });
   </script>
 </body>
 </html>
